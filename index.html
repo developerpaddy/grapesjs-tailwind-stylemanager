@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Grapesjs Tailwind 2.0</title>
+    <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/grapesjs"></script>
+    <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
+    <script src="https://unpkg.com/grapesjs-tailwind"></script>
+    <script src="https://unpkg.com/grapesjs-tailwindcss-plugin"></script>
+    <script type="module">
+      import '/src/main.js';
+    </script>
+    <link rel="stylesheet" href="./src/twproperty.css">
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="gjs" style="height:0px; overflow:hidden">
+      <div class="">
+        <pre>
+          Need to handle special exceptions for 
+          background image
+          border width - divide
+          border style - divide
+          box-shadow
+        </pre>
+        </div>
+    </div>
+
+    <script>
+
+    setTimeout(() => {
+      
+      window.editor = grapesjs.init({
+        height: '100%',
+        container: '#gjs',
+        showOffsets: true,
+        fromElement: true,
+        noticeOnUnload: false,
+        storageManager: false,
+        plugins: ['gjs-blocks-basic', 'grapesjs-tailwind', 'GrapesjsTailwindSM', 'grapesjs-tailwindcss-plugin'],
+        pluginsOpts: {
+          "gjs-blocks-basic": {
+            'flexGrid' : true,
+            // 'blocks': ['text', 'link', 'image', 'video', 'map']
+          }
+        },
+        canvas: {
+          scripts: ['https://unpkg.com/@tailwindcss/browser@4']
+        },
+        selectorManager: {
+          componentFirst: true,
+        },
+        styleManager: {
+          clearProperties: false,
+          sectors: [
+            {
+              name: 'layout',
+              properties: [
+                'twAspectRatio', 
+                'twColumns', 
+                'twBreakAfter', 
+                'twBreakBefore', 
+                'twBreakInside',
+                'twBoxDecorationBreak',
+                'twBoxSizing',
+                'twDisplay',
+                'twFloat',
+                'twClear',
+                'twIsolation',
+                'twObjectFit',
+                'twObjectPosition',
+                'twOverflow',
+                'twOverscrollBehavior',
+                'twPosition',
+                'twInset',
+                'twVisibility',
+                'twZIndex'
+              ]
+            },
+            {
+              name: 'Flex & Grid',
+              open: false,
+              properties: [
+                'twFlexBasis',
+                'twFlexDirection',
+                'twFlexWrap',
+                'twFlex',
+                'twFlexGrow',
+                'twFlexShrink',
+                'twJustifyContent',
+                'twAlignContent',
+                'twJustifyItems',
+                'twAlignItems',
+                'twJustifySelf',
+                'twAlignSelf',
+                'twOrder',
+                'twGridTemplateColumns',
+                'twGridColumn',
+                'twGridColumnSpan',
+                'twGridTemplateRows',
+                'twGridRow',
+                'twGridRowSpan',
+                'twGridAutoFlow',
+                'twGridAutoColumns',
+                'twGridAutoRows',
+                'twGap',
+                'twPlaceContent',
+                'twPlaceItems',
+                'twPlaceSelf'
+              ]
+            },
+            {
+              name: 'Sizing & Spacing',
+              open: false,
+              properties: [
+                'twWidth',
+                'twHeight',
+                'twMinWidth',
+                'twMinHeight',
+                'twMaxWidth',
+                'twMaxHeight',
+                'twPadding',
+                'twMargin'
+              ]
+            },
+            {
+              name: 'Typography',
+              open: false,
+              properties: [
+                'twFontFamily',
+                'twFontSize',
+                'twWebkitFontSmoothing',
+                'twFontStyle',
+                'twFontWeight',
+                'twFontStretch',
+                'twFontVariantNumeric',
+                'twLetterSpacing',
+                'twLineClamp',
+                'twLineHeight',
+                'twListStyleImage',
+                'twListStylePosition',
+                'twListStyleType',
+                'twTextAlign',
+                'twColor',
+                'twTextDecorationLine',
+                'twTextDecorationColor',
+                'twTextDecorationStyle',
+                'twTextDecorationThickness',
+                'twTextUnderlineOffset',
+                'twTextTransform',
+                'twTextOverflow',
+                'twTextWrap',
+                'twTextIndent',
+                'twVerticalAlign',
+                'twWhiteSpace',
+                // 'twOverflowWrap',
+                'twHyphens',
+                'twContent'
+              ]
+            },
+            {
+              name: 'Background',
+              open: false,
+              properties: [
+                'twBackgroundAttachment',
+                'twBackgroundClip',
+                'twBackgroundColor',
+                'twBackgroundOrigin',
+                'twBackgroundPosition',
+                'twBackgroundRepeat',
+                'twBackgroundSize',
+              ]
+            },
+            {
+              name: 'Borders',
+              open: false,
+              properties: [
+                'twBorderRadius',
+                'twBorderStyle',
+                'twBorderColor',
+                'twOutlineWidth',
+                'twOutlineColor',
+                'twOutlineStyle',
+                'twOutlineOffset'
+              ]
+            },
+            {
+              name: 'Effects',
+              open: false,
+              properties: [
+                'twBoxShadow',
+                'twShadowColor',
+                'twOpacity',
+                'twMixBlendMode',
+                'twBackgroundBlendMode'
+              ]
+            },
+            {
+              name: 'Filters',
+              open: false,
+              properties: [
+                'twFilter',
+                'twBackdropFilter'
+              ]
+            },
+            {
+              name: 'Tables',
+              open: false,
+              properties: [
+                'twBorderCollapse',
+                'twBorderSpacing',
+                'twTableLayout',
+                'twCaptionSide'
+              ]
+            },
+            {
+              name: 'Transition & Animation',
+              open: false,
+              properties: [
+                'twTransitionBehaviour',
+                'twTransitionTimingFunction',
+                'twTransitionDelay',
+                'twAnimation',
+              ]
+            },
+            {
+              name: 'Transforms',
+              open: false,
+              properties: [
+                'twBackfaceVisibility',
+                'twPerspective',
+                'twPerspectiveOrigin',
+                'twRotate',
+                'twScale',
+                'twTransform',
+                'twTransformOrigin',
+                'twTransformStyle',
+                'twTranslate'
+              ]
+            },
+            {
+              name: 'Interactivity',
+              open: false,
+              properties: [
+                'twAccentcolor',
+                'twAppearance',
+                'twCaretcolor',
+                'twColorScheme',
+                'twCursor',
+                'twFieldSizing',
+                'twPointerEvents',
+                'twResize',
+                'twScrollBehavior',
+                'twScrollMargin',
+                'twScrollPadding',
+                'twScrollSnapAlign',
+                'twScrollSnapStop',
+                'twScrollSnapType',
+                'twTouchAction',
+                'twUserSelect',
+                'twWillChange',
+              ]
+            },
+            {
+              name: 'SVG',
+              open: false,
+              properties: [
+                'twFill',
+                'twStroke',
+                'twStrokeWidth'
+              ]
+            },
+            {
+              name: 'Accessibility',
+              open: false,
+              properties: [
+                'twForcedColorAdjust'
+              ]
+            }
+          ],
+
+        },
+        blockManager: '',
+        mediaCondition: 'min-width',
+        deviceManager: {
+          default: 'lg',
+          devices: [
+            {
+              id: 'xs',
+              name: 'xs:<640px',
+              width: '480px', 
+              widthMedia: '',
+              height: '600px',
+            },
+            {
+              id: 'sm',
+              name: 'sm:640px',
+              width: '640px', 
+              widthMedia: '640px',
+              height: '600px',
+            },
+            {
+              id: 'md',
+              name: 'md:768px',
+              width: '768px', 
+              widthMedia: '768px',
+              height: '600px',
+            },
+            {
+              id: 'lg',
+              name: 'lg:1024px',
+              width: '1024px', 
+              widthMedia: '1024px',
+              height: '600px',
+            },
+            {
+              id: 'xl',
+              name: 'xl:1280px',
+              width: '1280px', 
+              widthMedia: '1280px',
+              height: '600px',
+            },
+            {
+              id: '2xl',
+              name: '2xl:1536px',
+              width: '1536px', 
+              widthMedia: '1536px',
+              height: '600px',
+            },
+          ],
+        }
+      });
+    }, 1000);
+    </script>
+  </body>
+</html>

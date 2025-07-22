@@ -1,0 +1,133 @@
+.twPropertyWrapper {
+  width: 100%;
+}
+
+.twPropertyIcons {
+  display: block;
+  margin-bottom: 4px;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  position: relative;
+  float: right;
+  border: 1px solid #fff;
+  padding: 2px 2px 2px 4px;
+  line-height: 10px;
+  margin-top: -18px;
+}
+
+.gjs-sm-label:after {
+  content: '?';
+  width: 5px;
+  height: 5px;
+  font-size: 7px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 2px;
+  line-height: 6px;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+.twPropertyIcons::after{
+  content: 'V';
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.twPropertyIcons:hover > .twIconsWrapper {
+  display: block;
+}
+
+.twIconsWrapper{
+  display: none;
+  margin-left: -5px;
+  position: absolute;
+  bottom: -1px;
+  z-index: 1000;
+}
+
+.twIcon {
+  cursor: pointer;
+  padding: 2px 4px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  background: #fff;
+  display: block;
+}
+
+.twIcon.active {
+  background: #e6f3ff;
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+
+.twPropertyInput{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid transparent;
+  background-color: #363636;
+}
+
+.hidden {
+  display: none;
+}
+
+.selectArrowWrapper{
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.selectArrow{
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  border: solid #363636;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-top: -3px;
+  margin-left: 1px;
+}
+
+.valuesDropDown {
+
+  position: absolute;
+  background-color: #363636;
+  border: 1px solid transparent;
+  list-style: none;
+  padding: 7px;
+  margin: 1px;
+  z-index: 9999;
+  display: block;
+  width: max-content;
+  height: 150px;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  & li{
+    cursor: pointer;
+    padding: 4px;      
+  }
+
+  & li:hover{
+    background-color: #ccc;
+    color: #363636;
+  }
+}
+.gjs-sm-property:nth-child(even) .valuesDropDown.active{
+  right: 0;
+}
+.w-1\/6{
+  width: calc(1rem * 1/6);
+}
